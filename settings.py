@@ -30,7 +30,7 @@ DEFAULT_DETECT_IMAGE = IMAGES_DIR / '2024-02-14 (4).png'
 VIDEO_DIR = ROOT / 'videos'
 VIDEOS_DICT = {
     #'video_2': VIDEO_DIR / 'file.mp4',
-    'video_1': VIDEO_DIR / 'file1.mp4',
+    'video_1': VIDEO_DIR / 'Ski_Vid_test.mp4',
 
 }
 

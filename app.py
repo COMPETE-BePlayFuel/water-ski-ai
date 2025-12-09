@@ -7,7 +7,8 @@ import streamlit as st
 
 # Local Modules
 import settings
-import helper,helper3,helper_new,helper_copy,new,helper_deep,helper_2
+import helper,helper3,helper_new,helper_copy 
+#new,helper_deep,helper_2
 
 # Setting page layout
 st.set_page_config(
