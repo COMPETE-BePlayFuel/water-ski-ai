@@ -119,15 +119,18 @@ if source_radio == settings.IMAGE:
 
 elif source_radio == settings.VIDEO:
     helper.play_stored_video(confidence, model)
+else:
+    st.error("Please select a valid source type!")
+
+"""
 elif source_radio == settings.MULTIPLE_VIDEOS_2:
     helper_2.play_stored_video(confidence, model)    
 elif source_radio == settings.MULTIPLE_VIDEOS:
     helper_new.play_stored_video(confidence, model)
 elif source_radio == settings.DEEP_ANALYSIS:
     helper_deep.play_stored_video(confidence, model)
+"""
 
-else:
-    st.error("Please select a valid source type!")
 
 
 
