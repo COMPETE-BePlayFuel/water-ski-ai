@@ -1,0 +1,35 @@
+# Translated from GitLab CI (.gitlab-ci.yml)
+# Replaces GitLab's `include: Security/SAST.gitlab-ci.yml` template
+# with GitHub's native CodeQL security analysis
+# Security: No untrusted user input used in run: commands
+name: CodeQL Security Analysis
+
+on:
+  push:
+    branches: [main, stage]
+  pull_request:
+    branches: [main, stage]
+  # Run weekly for ongoing security monitoring
+  schedule:
+    - cron: '0 6 * * 1'
+
+jobs:
+  analyze:
+    name: Analyze (Python)
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+      contents: read
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
